@@ -1,5 +1,8 @@
 <template>
 	<view>
+				<!-- <my-search :bgcolor="'black' " :rdaius="'30'"></my-search> -->
+				<!-- 有了增強屬性就可以在my-search賦值進行調整 -->
+				<my-search @click='gotoSearch' ></my-search>
 		<view class="scroll-view-container">
 			<!-- 左侧的滑动区域 -->
 			<!-- 固定高度的设置 -->
@@ -62,8 +65,9 @@
 			const sysInfo = uni.getSystemInfoSync()
 			// console.log(sysInfo);
 			// 给当前可用高度赋值
-			this.wh = sysInfo.windowHeight
+			this.wh = sysInfo.windowHeight - 50
 			// 然后就可以到scroll-view的高度进行动态高度的绑定:style
+			// -50px為扣除my-search的高度，這樣才能避免最後把search給拉沒了
 			
 			
 			// 调用获取分类表数据的方法
@@ -98,6 +102,13 @@
 			  uni.navigateTo({
 			    url: '/subpkg/goods_list/goods_list?cid=' + item3.cat_id
 				// 注意参数的传递网址的部分后面股东是？cid=传递了？分类的id，再+api的索引项
+				})
+			},
+			gotoSearch(){
+				// console.log('ok');
+				// 跳轉到分包的路徑
+				uni.navigateTo({
+					url:'/subpkg/search/search'
 				})
 			}
 		}

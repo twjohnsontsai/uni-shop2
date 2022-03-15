@@ -1,6 +1,10 @@
 	<!-- wxml格式，标签 -->
 <template>
 	<view>
+		<!-- 搜索組件 -->
+		<view class="search-box">
+			<my-search @click='gotoSearch'></my-search>
+		</view>
 		<!-- 轮播图区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 			<!-- 轮播图的相关属性的设置，还有时间停留秒速，循环 -->
@@ -119,8 +123,12 @@
 				})
 				// 对floorList 赋值
 				this.floorList = res.message
+			},
+			gotoSearch(){
+				uni.navigateTo({
+					url:'/subpkg/search/search'
+				})
 			}
-
 			},
 		}
 </script>
@@ -160,5 +168,14 @@ swiper{
 	// 自动换行
 	justify-content: space-around;
 	// 周边自动调整对应
+}
+// 搜索頁面吸頂效果,z-index設置為最頂層
+.search-box{
+	// 設置定位效果為吸頂
+	position: sticky;
+	// 吸頂的位置
+	top: 0;
+	// 提高層級
+	z-index: 999;
 }
 </style>

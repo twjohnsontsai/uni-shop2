@@ -93,6 +93,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    mySearch: function() {
+      return __webpack_require__.e(/*! import() | components/my-search/my-search */ "components/my-search/my-search").then(__webpack_require__.bind(null, /*! @/components/my-search/my-search.vue */ 64))
+    }
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -173,6 +196,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -194,8 +220,9 @@ var _default =
     var sysInfo = uni.getSystemInfoSync();
     // console.log(sysInfo);
     // 给当前可用高度赋值
-    this.wh = sysInfo.windowHeight;
+    this.wh = sysInfo.windowHeight - 50;
     // 然后就可以到scroll-view的高度进行动态高度的绑定:style
+    // -50px為扣除my-search的高度，這樣才能避免最後把search給拉沒了
 
 
     // 调用获取分类表数据的方法
@@ -231,6 +258,13 @@ var _default =
         url: '/subpkg/goods_list/goods_list?cid=' + item3.cat_id
         // 注意参数的传递网址的部分后面股东是？cid=传递了？分类的id，再+api的索引项
       });
+    },
+    gotoSearch: function gotoSearch() {
+      // console.log('ok');
+      // 跳轉到分包的路徑
+      uni.navigateTo({
+        url: '/subpkg/search/search' });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

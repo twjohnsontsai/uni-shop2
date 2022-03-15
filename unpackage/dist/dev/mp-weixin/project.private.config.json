@@ -14,9 +14,10 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/cate/cate",
+          "pathName": "subpkg/search/search",
           "query": "",
-          "scene": null
+          "scene": null,
+          "launchMode": "default"
         }
       ]
     }
