@@ -22,10 +22,18 @@
                     "path" : "goods_list/goods_list",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
+					// 为分包中的goods_list页面配置上拉触底的距离
+					"onReachBottomDistance": 150,
+					// 为goods-list页面添加下拉刷新的功能
+					"enablePullDownRefresh":true,
+					"backgroundColor":"#F8F8F8"
                 }
-                
+                }
+                ,{
+                    "path" : "search/search",
+                    "style" :                                                                                    
+                {
+                }
                 }
             ]
 		}],

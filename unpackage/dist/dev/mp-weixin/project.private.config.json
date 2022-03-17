@@ -14,9 +14,10 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/cate/cate",
-          "query": "",
-          "scene": null
+          "pathName": "subpkg/goods_list/goods_list",
+          "query": "cid=5",
+          "scene": null,
+          "launchMode": "default"
         }
       ]
     }
