@@ -104,7 +104,36 @@
 		}
 	}
 </script>
- 
+ <!-- 在my_goods.vues的scss没有作用 -->
 <style lang="scss">
-
+.goods-list{
+	.goods-item{
+		display: flex;
+		padding: 5px 10px;
+		border-bottom: 1px solid #F0F0F0;
+		.goods-item-left{
+			margin-right: 5px;
+			.goods-pic{
+				height: 100px;
+				width: 100px;
+				display: block;//防止图片下面有一定空白的间隙
+			}
+		}
+		.goods-item-right{
+			display: flex;//自动分布
+			flex-direction: column;//纵向布局
+			justify-content: space-between;//上下两端贴边
+			.goods-name{
+				font-size: 13px;
+			}
+			.goods-info-box{
+				.goods-price{
+					color: #c00000;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+	
+}
 </style>

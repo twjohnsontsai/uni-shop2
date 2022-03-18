@@ -62,7 +62,7 @@
 			}
 		}
 		.goods-item-right{
-			display: flex;//自动分布
+			display: flex;//弹性分布
 			flex-direction: column;//纵向布局
 			justify-content: space-between;//上下两端贴边
 			.goods-name{
