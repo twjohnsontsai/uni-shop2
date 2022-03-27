@@ -1,28 +1,36 @@
 @charset "UTF-8";
 /* 水平间距 */
 /* 水平间距 */
-.goods-list .goods-item {
+.goods-item {
   display: flex;
   padding: 5px 10px;
   border-bottom: 1px solid #F0F0F0;
 }
-.goods-list .goods-item .goods-item-left {
+.goods-item .goods-item-left {
   margin-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.goods-list .goods-item .goods-item-left .goods-pic {
+.goods-item .goods-item-left .goods-pic {
   height: 100px;
   width: 100px;
   display: block;
 }
-.goods-list .goods-item .goods-item-right {
+.goods-item .goods-item-right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.goods-list .goods-item .goods-item-right .goods-name {
+.goods-item .goods-item-right .goods-name {
   font-size: 13px;
 }
-.goods-list .goods-item .goods-item-right .goods-info-box .goods-price {
+.goods-item .goods-item-right .goods-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.goods-item .goods-item-right .goods-price {
   color: #c00000;
   font-size: 16px;
 }

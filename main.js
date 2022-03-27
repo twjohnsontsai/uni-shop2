@@ -2,6 +2,10 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
+// 8.1 配置 vuex
+// 4.在 main.js 中导入 store 实例对象并挂载到 Vue 的实例上
+// 4-1. 导入 store 的实例对象
+import store from './store/store.js'
 
 // 按需导入 $http 对象（导入网络请求的包）
 import { $http } from '@escook/request-miniprogram'
@@ -38,7 +42,11 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 
 const app = new Vue({
-    ...App
+    ...App,
+	// 8.1 配置 vuex
+	// 8.1.4.-1在 main.js 中导入 store 实例对象并挂载到 Vue 的实例上
+	// 8.1.4-2. 将 store 挂载到 Vue 实例上
+	store,
 })
 app.$mount()
 // #endif

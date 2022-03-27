@@ -6,7 +6,7 @@
 	  <view v-for="(goods, i) in goodsList" :key="i" @click="gotoDetail(goods)">
 		  <!-- 循环渲染时就可以使用<my-goods></my-goods>通过属性绑定的形式来传递goods的属性 ，他的属性就是我们循环项中的goods（item）项-->
        <!-- 为 my-goods 组件动态绑定 goods 属性的值 -->
-	   <my-goods :goods='goods'></my-goods>
+	   <my-goods :goods='goods' ></my-goods>
 	   <!-- 经过封装的程序也能够将商品页面成功的显示出来 -->
       <!-- </block> -->
 	  </view>
@@ -46,7 +46,7 @@
 			 // ||或
 			// 赋值给this.queryObj.query,如果没有query值就赋予空数值,避免进入默认值undefine(产生错误)
 			this.queryObj.cid = options.cid || ''
-			console.log(this.queryObj);
+			// console.log(this.queryObj);
 			// 获取商品列表的数bkeqo1据
 			// 调用获取商品数据的方法
 			this.getGoodsList()

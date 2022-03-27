@@ -16,6 +16,13 @@
           "name": "",
           "pathName": "subpkg/goods_list/goods_list",
           "query": "cid=5",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/cart/cart",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }
